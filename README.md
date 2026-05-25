@@ -14,4 +14,8 @@ VP jitter — i.e. temporal incoherence reveals degradation that single-frame me
 - `CS131_Project_Milestone.pdf` — milestone report (progress, results, updated plan)
 - `milestone/` — milestone code, figures, and outputs
 
-Tested on KITTI raw sequence `2011_09_26_drive_0002` (77 frames, city driving).
+Tested on KITTI raw sequence `2011_09_26_drive_0002` (77 frames, city driving). 
+
+---
+Lea M. Hadzic  
+CS 131 – *Computer Vision: Foundations and Applications*
