@@ -1,9 +1,13 @@
+<div align="center">
+
 ## 🚘 Counterfactual Stability Analysis of Classical Lane Perception
 
-_A classical lane perception pipeline (Canny → ROI mask → 
+</div>
+
+> A classical lane perception pipeline (Canny → ROI mask → 
 probabilistic Hough → slope-based grouping → least-squares line fit → vanishing point) 
 tested under semantically plausible perturbations, using *temporal stability of the 
-vanishing point* as a candidate uncertainty signal._
+vanishing point* as a candidate uncertainty signal.
 
 **Core finding:** a synthetic cast shadow leaves per-frame VP recovery at 77/77 (so 
 per-frame confidence metrics see nothing wrong), yet roughly doubles frame-to-frame 
