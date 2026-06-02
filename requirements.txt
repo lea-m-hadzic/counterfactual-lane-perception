@@ -1,0 +1,7 @@
+numpy<2.0
+opencv-python>=4.5
+matplotlib>=3.5
+seaborn>=0.12
+pandas>=1.5
+imageio>=2.0
+imageio-ffmpeg
