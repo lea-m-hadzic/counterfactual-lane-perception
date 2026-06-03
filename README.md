@@ -4,9 +4,9 @@
 
 </div>
 
-*A classical lane perception pipeline (Canny → Hough → lane fit → vanishing point)
+*A classical lane perception pipeline (Canny edge detection → Hough transform → lane fit → vanishing point)
 on KITTI driving sequences, evaluated under two counterfactual perturbations
-– synthetic shadow and motion blur – across five temporal stability metrics.*
+– synthetic shadow and motion blur – across five different temporal stability metrics.*
 
 ![](outputs/clean.gif)
 
