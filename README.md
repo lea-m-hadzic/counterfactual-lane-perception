@@ -6,7 +6,7 @@
 
 *A classical lane perception pipeline (Canny → Hough → lane fit → vanishing point)
 on KITTI driving sequences, evaluated under two counterfactual perturbations
-(synthetic shadow, motion blur) across five temporal stability metrics.*
+– synthetic shadow and motion blur – across five temporal stability metrics.*
 
 | Clean | Shadow | Blur |
 |---|---|---|
