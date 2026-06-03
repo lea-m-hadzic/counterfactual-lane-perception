@@ -8,9 +8,7 @@
 on KITTI driving sequences, evaluated under two counterfactual perturbations
 – synthetic shadow and motion blur – across five temporal stability metrics.*
 
-| Clean | Shadow | Blur |
-|---|---|---|
-| ![](outputs/clean.gif) | ![](outputs/shadow.gif) | ![](outputs/blur.gif) |
+![](outputs/clean.gif)
 
 **Headline finding:** under synthetic shadow, per-frame vanishing-point recovery
 remains at 100% while frame-to-frame jitter doubles and a single-frame excursion
