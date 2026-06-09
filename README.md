@@ -1,6 +1,6 @@
 <div align="center">
 
-## 🚘 Counterfactual Stability Analysis of Classical Lane Perception
+# Counterfactual Stability Analysis of Classical Lane Perception
 
 </div>
 
@@ -15,7 +15,7 @@ remains at 100% while frame-to-frame jitter doubles and a single-frame excursion
 of >200 px occurs at frame 57 of `drive_0002` — a failure invisible to any
 per-frame metric.
 
-### Repository Structure
+## Repository Structure
 
 ```
 .
@@ -45,7 +45,7 @@ per-frame metric.
 └── README.md
 ```
 
-### Setup
+## Setup
 
 ```bash
 pip install -r requirements.txt
@@ -57,7 +57,7 @@ sequences (`2011_09_26_drive_0002` and `2011_09_29_drive_0026`, ~770 MB total)
 into a local `data/` folder. Total runtime is ~3–5 minutes after download on
 a recent laptop or Colab.
 
-### What the notebook produces
+## What the notebook produces
 
 The notebook generates everything in `outputs/`:
 
@@ -65,7 +65,7 @@ The notebook generates everything in `outputs/`:
 - Seven figures used in the final report
 - Three demo GIFs (clean, shadow, motion blur) for the presentation
 ---
-### Methodology summary
+## Methodology summary
 
 **Pipeline.** Grayscale → Gaussian blur → Canny edge detection → trapezoidal ROI
 mask → probabilistic Hough → slope-based segment grouping → weighted least-squares
@@ -108,7 +108,7 @@ by scene content.
 
 ---
 
-### Acknowledgments
+## Acknowledgments
 
 See the AI Assistance note at the end of the final report.
 
