@@ -19,23 +19,27 @@ per-frame metric.
 
 ```
 .
-├── outputs/
-│   ├── drive_0002_results.npz    # Per-sequence raw results
-│   ├── drive_0026_results.npz
-│   ├── autocorrelation.png       
-│   ├── consecutive_frames.png    
-│   ├── cross_sequence_metrics.png  
-│   ├── cumulative_drift.png      
-│   ├── frame57_deepdive.png      
-│   ├── perturbation_examples.png 
-│   ├── two_metrics.png           
-│   ├── vp_timeseries.png         
-│   ├── blur.gif                  
-│   ├── shadow.gif                
-│   └── clean.gif                 
+├── src/lane_perception/         # Importable package (the whole pipeline)
+│   ├── config.py                # Paths, figure styling, sequence metadata
+│   ├── pipeline.py              # Edges → ROI → Hough → fit → vanishing point
+│   ├── perturbations.py         # Synthetic shadow + motion blur
+│   ├── data.py                  # KITTI download / extract / frame listing
+│   ├── runner.py                # Batch-run pipeline, extract per-frame signals
+│   ├── metrics.py               # Temporal stability metrics
+│   └── viz.py                   # Report figures + demo GIFs
 │
-├── analysis.ipynb                # Main analysis notebook
-├── requirements.txt              # Python dependencies
+├── scripts/
+│   ├── run_analysis.py          # Download → run → save .npz/.json + tables
+│   └── make_figures.py          # Render all figures + GIFs into outputs/
+│
+├── outputs/                     # Generated results & figures
+│   ├── drive_0002_results.npz   # Per-frame VP signals (one .npz per sequence)
+│   ├── drive_0026_results.npz
+│   ├── *.png                    # Seven report figures
+│   └── clean.gif / shadow.gif / blur.gif
+│
+├── paper.pdf                    # Write-up
+├── requirements.txt             # Python dependencies
 └── README.md
 ```
 
@@ -43,19 +47,31 @@ per-frame metric.
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook analysis.ipynb
 ```
 
-Run the notebook top to bottom. The first few cells download two KITTI raw
-sequences (`2011_09_26_drive_0002` and `2011_09_29_drive_0026`, ~770 MB total)
-into a local `data/` folder. Total runtime is ~3–5 minutes after download on
-a recent laptop or Colab.
+## Running
 
-## What the notebook produces
+```bash
+python scripts/run_analysis.py      # download data, run pipeline, write .npz/.json + tables
+python scripts/make_figures.py      # render all figures + GIFs into outputs/
+```
 
-The notebook generates everything in `outputs/`:
+`run_analysis.py` downloads two KITTI raw sequences (`2011_09_26_drive_0002`
+and `2011_09_29_drive_0026`, ~770 MB total) into a local `data/` folder on first
+run. Total runtime is ~3–5 minutes after download on a recent laptop. Pass a
+sequence key (e.g. `python scripts/run_analysis.py drive_0002`) to run just one;
+use `make_figures.py --skip-gifs` to skip the slower GIF rendering.
 
-- Per-frame detection results saved to `.npz` files (one per sequence)
+The package is plain modules under `src/` — no install step. The scripts add
+`src/` to the path automatically; to use the code directly, point `PYTHONPATH`
+at `src/` and `import lane_perception`.
+
+## What the scripts produce
+
+Everything lands in `outputs/`:
+
+- Per-frame VP signals (`<sequence>_results.npz`) and scalar metrics
+  (`<sequence>_metrics.json`), one of each per sequence
 - Seven figures used in the final report
 - Three demo GIFs (clean, shadow, motion blur) for the presentation
 ---
