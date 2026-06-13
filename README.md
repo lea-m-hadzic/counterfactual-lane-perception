@@ -19,12 +19,6 @@ per-frame metric.
 
 ```
 .
-├── deliverables/
-│   ├── proposal.pdf              # Project proposal
-│   ├── milestone.pdf             # Milestone report
-│   ├── demo_day_deck.pdf         # Demo day presentation
-│   └── final_report.pdf          # Final report (CVPR-style paper)
-│
 ├── outputs/
 │   ├── drive_0002_results.npz    # Per-sequence raw results
 │   ├── drive_0026_results.npz
@@ -105,15 +99,3 @@ autocorrelation.
 
 Results replicate qualitatively on the second sequence, with magnitudes varying
 by scene content.
-
----
-
-## Acknowledgments
-
-See the AI Assistance note at the end of the final report.
-
----
-
-Lea M. Hadzic  
-CS 131 – *Computer Vision: Foundations and Applications*  
-Spring 2026, Stanford University
