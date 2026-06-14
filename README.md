@@ -115,3 +115,7 @@ autocorrelation.
 
 Results replicate qualitatively on the second sequence, with magnitudes varying
 by scene content.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
