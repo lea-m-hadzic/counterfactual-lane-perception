@@ -103,7 +103,13 @@ autocorrelation.
 - `2011_09_26_drive_0002` (77 frames, primary)
 - `2011_09_29_drive_0026` (158 frames, cross-sequence validation)
 
-### Results at a glance
+## Paper
+
+Full writeup with system model, optimization formulations, sensitivity analyses, and ablations:
+
+📄 **[Final paper (PDF)](paper.pdf)** — CVPR 2-column, 5 pages
+
+## Results at a glance
 
 | Metric                 |  Clean |        Shadow |          Blur |
 |------------------------|-------:|--------------:|--------------:|
