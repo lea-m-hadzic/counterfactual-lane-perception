@@ -65,8 +65,7 @@ Everything lands in `outputs/`:
 
 - Per-frame VP signals (`<sequence>_results.npz`) and scalar metrics
   (`<sequence>_metrics.json`), one of each per sequence
-- Seven figures used in the final report
-- Three demo GIFs (clean, shadow, motion blur) for the presentation
+- Three demo GIFs (clean, shadow, motion blur)
 ---
 ## Methodology summary
 
@@ -95,12 +94,6 @@ autocorrelation.
 
 - `2011_09_26_drive_0002` (77 frames, primary)
 - `2011_09_29_drive_0026` (158 frames, cross-sequence validation)
-
-## Paper
-
-Full writeup with system model, optimization formulations, sensitivity analyses, and ablations:
-
-📄 **[Final paper (PDF)](paper.pdf)** — CVPR 2-column, 5 pages
 
 ## Results at a glance
 
