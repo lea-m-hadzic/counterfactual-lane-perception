@@ -1,4 +1,4 @@
-"""Shared configuration: paths, figure styling, palette, and sequence metadata."""
+"""Shared configuration: paths, perturbation parameters, and sequence metadata."""
 
 from pathlib import Path
 
@@ -16,37 +16,6 @@ def ensure_dirs():
     """Create the data/ and outputs/ directories if they don't exist."""
     DATA_DIR.mkdir(exist_ok=True)
     OUT_DIR.mkdir(exist_ok=True)
-
-
-# --- Figure styling --------------------------------------------------------
-# Fixed palette mapping each condition to a color used throughout the report.
-PALETTE = {
-    "clean": "#1f4e79",
-    "shadow": "#c44e52",
-    "blur": "#5b8c5a",
-}
-
-# Per-sequence color pair (used in the cross-sequence comparison figure).
-SEQUENCE_PALETTE = ["#1f4e79", "#7a4e7e"]
-
-
-def set_plot_style():
-    """Apply the consistent seaborn theme used for all report figures."""
-    import seaborn as sns
-
-    sns.set_theme(
-        style="whitegrid",
-        context="paper",
-        font_scale=1.0,
-        rc={
-            "figure.dpi": 110,
-            "savefig.dpi": 200,
-            "savefig.bbox": "tight",
-            "axes.spines.top": False,
-            "axes.spines.right": False,
-            "grid.alpha": 0.3,
-        },
-    )
 
 
 # --- Perturbation parameters -----------------------------------------------

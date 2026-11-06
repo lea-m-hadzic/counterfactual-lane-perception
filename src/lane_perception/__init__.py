@@ -5,7 +5,7 @@ vanishing point) evaluated under counterfactual perturbations (synthetic
 shadow, motion blur) across temporal stability metrics on KITTI sequences.
 """
 
-from . import config, data, metrics, perturbations, pipeline, runner, viz
+from . import config, data, metrics, perturbations, pipeline, runner
 
 __all__ = [
     "config",
@@ -14,5 +14,4 @@ __all__ = [
     "perturbations",
     "pipeline",
     "runner",
-    "viz",
 ]
