@@ -5,8 +5,7 @@
 </div>
 
 *A classical lane perception pipeline (Canny edge detection → Hough transform → lane fit → vanishing point)
-on KITTI driving sequences, evaluated under two counterfactual perturbations
-(synthetic shadow and motion blur) across five temporal stability metrics.*
+on KITTI driving sequences, evaluated under two counterfactual perturbations–synthetic shadow and motion blur–across five temporal stability metrics.*
 
 ![](outputs/clean.gif)
 
@@ -25,20 +24,16 @@ per-frame metric.
 │   ├── perturbations.py         # Synthetic shadow + motion blur
 │   ├── data.py                  # KITTI download / extract / frame listing
 │   ├── runner.py                # Batch-run pipeline, extract per-frame signals
-│   ├── metrics.py               # Temporal stability metrics
-│   └── viz.py                   # Report figures + demo GIFs
+│   └── metrics.py               # Temporal stability metrics
 │
 ├── scripts/
-│   ├── run_analysis.py          # Download → run → save .npz/.json + tables
-│   └── make_figures.py          # Render all figures + GIFs into outputs/
+│   └── run_analysis.py          # Download → run → save .npz/.json
 │
 ├── outputs/                     # Generated results & figures
 │   ├── drive_0002_results.npz   # Per-frame VP signals (one .npz per sequence)
 │   ├── drive_0026_results.npz
-│   ├── *.png                    # Seven report figures
 │   └── clean.gif / shadow.gif / blur.gif
 │
-├── paper.pdf                    # Write-up
 ├── requirements.txt             # Python dependencies
 └── README.md
 ```
@@ -53,14 +48,12 @@ pip install -r requirements.txt
 
 ```bash
 python scripts/run_analysis.py      # download data, run pipeline, write .npz/.json + tables
-python scripts/make_figures.py      # render all figures + GIFs into outputs/
 ```
 
 `run_analysis.py` downloads two KITTI raw sequences (`2011_09_26_drive_0002`
 and `2011_09_29_drive_0026`, ~770 MB total) into a local `data/` folder on first
 run. Total runtime is ~3–5 minutes after download on a recent laptop. Pass a
-sequence key (e.g. `python scripts/run_analysis.py drive_0002`) to run just one;
-use `make_figures.py --skip-gifs` to skip the slower GIF rendering.
+sequence key (e.g. `python scripts/run_analysis.py drive_0002`) to run just one.
 
 The package is plain modules under `src/` — no install step. The scripts add
 `src/` to the path automatically; to use the code directly, point `PYTHONPATH`
